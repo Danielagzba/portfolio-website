@@ -47,17 +47,17 @@ export default function AboutPage() {
             <h3 className="text-gray-500 mb-4">Work</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work/kona-crumble" className="hover:underline">
+                <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
                 </Link>
               </li>
               <li>
-                <Link href="/work/promising-nfts" className="hover:underline">
+                <Link href="/promising-nfts" className="hover:underline">
                   Promising NFTs
                 </Link>
               </li>
               <li>
-                <Link href="/work/airbnb" className="hover:underline">
+                <Link href="/airbnb" className="hover:underline">
                   Airbnb
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work" className="hover:underline">
+                <Link href="" className="hover:underline">
                   Work
                 </Link>
               </li>

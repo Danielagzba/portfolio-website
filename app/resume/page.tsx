@@ -13,7 +13,7 @@ export default function ResumePage() {
         <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
           {/* Replace this with your actual resume image */}
           <Image
-            src="/resume-EN.png"
+            src="/Daniela-Resume-EN.png"
             alt="Daniela Bontecou Resume"
             width={900}
             height={1200}
@@ -40,17 +40,17 @@ export default function ResumePage() {
             <h3 className="text-gray-500 mb-4">Work</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work/kona-crumble" className="hover:underline">
+                <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
                 </Link>
               </li>
               <li>
-                <Link href="/work/promising-nfts" className="hover:underline">
+                <Link href="/promising-nfts" className="hover:underline">
                   Promising NFTs
                 </Link>
               </li>
               <li>
-                <Link href="/work/airbnb" className="hover:underline">
+                <Link href="/airbnb" className="hover:underline">
                   Airbnb
                 </Link>
               </li>
@@ -60,7 +60,7 @@ export default function ResumePage() {
             <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work" className="hover:underline">
+                <Link href="" className="hover:underline">
                   Work
                 </Link>
               </li>

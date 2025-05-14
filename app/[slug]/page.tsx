@@ -1,33 +1,48 @@
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import Navbar from "@/components/navbar"
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Navbar from "@/components/navbar";
 
 // This would typically come from a CMS or database
 const projects = {
   "kona-crumble": {
-    title: "Kona Crumble",
+    title: "Kona Crumble Cookies",
     category: "PRODUCT DESIGN",
-    titleColor: "#000000",
-    workflow: ["Social Media Design", "Content Management", "Marketing Strategies", "Social Media Strategies"],
-    team: ["Daniela Bontecou", "Andrea Gonzalez", "Alberto Alfaro"],
+    titleColor: "#6e56cf",
+    workflow: [
+      "Branding",
+      "Graphic Design",
+      "Packaging Design",
+      "Social Media Marketing",
+    ],
+    team: ["Daniela Bontecou"],
     time: {
       year: "2024",
-      duration: "5 months",
+      duration: "4 months",
     },
+    image: "/thumbnail copy.png",
     product: "Kona Crumble",
+
     overview: [
-      "Kona Crumble was a cookie brand founded by Andrea Gonzalez, based in Hawaii.",
-      "The brand aimed to create delicious cookies with locally sourced ingredients, while maintaining a strong online presence.",
-      "I was hired to assist with social media designs, packaging, and help grow the brand's community.",
+      "Kona Crumble was a New York-style cookie company based on the island of Hawai’i, founded and managed by Daniela Bontecou.",
+      "I have always loved baking, and after much consideration, I decided to start a cookie business specializing in New York-style cookies—really BIG cookies!",
     ],
-    image: "/kona-crumble.png",
+    branding: [
+      'Behind the Logo: The Kona Crumble logo features a chocolate chip cookie adorned with brown chips and crumbs. The name "Kona Crumble" is displayed above in our chosen font, Homie Lullaby. This playful, handwritten-style font adds a fun and personal touch to the brand\'s identity.',
+
+      "The color palette below showcases the primary colors of the brand, which also became the colors used for the packaging.",
+    ],
   },
   "promising-nfts": {
     title: "Promising NFTs",
     category: "PRODUCT DESIGN",
     titleColor: "#6E56CF",
-    workflow: ["Social Media Design", "Content Management", "Marketing Strategies", "Social Media Strategies"],
+    workflow: [
+      "Branding",
+      "Content Management",
+      "Marketing Strategies",
+      "Social Media Strategies",
+    ],
     team: ["Daniela Bontecou", "Andrea Gonzalez", "Alberto Alfaro"],
     time: {
       year: "2024",
@@ -81,7 +96,12 @@ const projects = {
     title: "Coco Canela",
     category: "PRODUCT DESIGN",
     titleColor: "#000000",
-    workflow: ["Brand Design", "Packaging Design", "Social Media Strategy", "Marketing Materials"],
+    workflow: [
+      "Brand Design",
+      "Packaging Design",
+      "Social Media Strategy",
+      "Marketing Materials",
+    ],
     team: ["Daniela Bontecou", "Andrea Gonzalez", "Alberto Alfaro"],
     time: {
       year: "2023",
@@ -113,17 +133,17 @@ const projects = {
     ],
     image: "/placeholder.svg?height=600&width=1200",
   },
-}
+};
 
 export function generateStaticParams() {
-  return Object.keys(projects).map((slug) => ({ slug }))
+  return Object.keys(projects).map((slug) => ({ slug }));
 }
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects[params.slug as keyof typeof projects]
+  const project = projects[params.slug as keyof typeof projects];
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -132,11 +152,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
       <div className="container mx-auto px-6 md:px-12 py-16">
         <div className="mb-8">
-          <span className={project.category === "CASE STUDY" ? "case-study-tag" : "product-design-tag"}>
+          <span
+            className={
+              project.category === "CASE STUDY"
+                ? "case-study-tag"
+                : "product-design-tag"
+            }
+          >
             {project.category}
           </span>
           <h1 className="text-3xl md:text-5xl font-bold mt-2">
-            Promising <span style={{ color: project.titleColor }}>NFTs</span>
+            <span style={{ color: project.titleColor }}>
+              {project.title.split(" ")[0]}
+            </span>{" "}
+            {project.title.split(" ").slice(1).join(" ")}
           </h1>
         </div>
 
@@ -169,11 +198,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
 
         <hr className="border-gray-200 mb-16" />
-
+        <div className="mb-16">
+          <Image
+            src={project.image || "/thumbnail copy.png"}
+            alt={project.title}
+            width={1200}
+            height={400}
+            className="w-full h-[400px] object-cover rounded-lg"
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           <div>
             <h2 className="text-2xl font-bold mb-4">Overview</h2>
           </div>
+
           <div className="md:col-span-2">
             {project.overview.map((paragraph, index) => (
               <p key={index} className="text-gray-600 mb-4">
@@ -181,16 +219,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </p>
             ))}
           </div>
-        </div>
 
-        <div className="mb-16">
-          <Image
-            src={project.image || "/placeholder.svg"}
-            alt={project.title}
-            width={1200}
-            height={600}
-            className="w-full h-auto rounded-lg"
-          />
+          {project.branding && project.branding.length > 0 && (
+            <>
+              <h2 className="text-2xl font-bold mb-4">Branding</h2>
+
+              <div className="md:col-span-2">
+                {project.branding.map((paragraph, index) => (
+                  <p key={index} className="text-gray-600 mb-4">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
@@ -217,17 +259,17 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <h3 className="text-gray-500 mb-4">Work</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work/kona-crumble" className="hover:underline">
+                <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
                 </Link>
               </li>
               <li>
-                <Link href="/work/promising-nfts" className="hover:underline">
+                <Link href="/promising-nfts" className="hover:underline">
                   Promising NFTs
                 </Link>
               </li>
               <li>
-                <Link href="/work/airbnb" className="hover:underline">
+                <Link href="/airbnb" className="hover:underline">
                   Airbnb
                 </Link>
               </li>
@@ -237,7 +279,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work" className="hover:underline">
+                <Link href="" className="hover:underline">
                   Work
                 </Link>
               </li>
@@ -252,17 +294,28 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <h3 className="text-gray-500 mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="mailto:hello@danielabontecou.com" className="hover:underline">
+                <Link
+                  href="mailto:hello@danielabontecou.com"
+                  className="hover:underline"
+                >
                   Email
                 </Link>
               </li>
               <li>
-                <Link href="https://linkedin.com" target="_blank" className="hover:underline">
+                <Link
+                  href="https://linkedin.com"
+                  target="_blank"
+                  className="hover:underline"
+                >
                   LinkedIn
                 </Link>
               </li>
               <li>
-                <Link href="https://instagram.com" target="_blank" className="hover:underline">
+                <Link
+                  href="https://instagram.com"
+                  target="_blank"
+                  className="hover:underline"
+                >
                   Instagram
                 </Link>
               </li>
@@ -270,10 +323,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
           <div>
             <h3 className="text-gray-500 mb-4">Do you want to collaborate?</h3>
-            <p className="text-gray-600">Send me an email and let's chat about what we can create together!</p>
+            <p className="text-gray-600">
+              Send me an email and let's chat about what we can create together!
+            </p>
           </div>
         </div>
       </footer>
     </main>
-  )
+  );
 }

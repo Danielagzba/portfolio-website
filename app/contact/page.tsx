@@ -1,50 +1,52 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Loader2 } from "lucide-react"
-import Navbar from "@/components/navbar"
+import { useState } from "react";
+import Link from "next/link";
+import { Loader2 } from "lucide-react";
+import Navbar from "@/components/navbar";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formSubmitted, setFormSubmitted] = useState(false)
-  const [formError, setFormError] = useState("")
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setFormError("")
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormError("");
 
     // Validate form
     if (!formData.name || !formData.email || !formData.message) {
-      setFormError("Please fill out all fields")
-      setIsSubmitting(false)
-      return
+      setFormError("Please fill out all fields");
+      setIsSubmitting(false);
+      return;
     }
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setFormError("Please enter a valid email address")
-      setIsSubmitting(false)
-      return
+      setFormError("Please enter a valid email address");
+      setIsSubmitting(false);
+      return;
     }
 
     try {
       // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // In a real application, you would send the form data to your backend
       // const response = await fetch('/api/contact', {
@@ -55,15 +57,15 @@ export default function ContactPage() {
 
       // if (!response.ok) throw new Error('Failed to submit form')
 
-      setFormSubmitted(true)
-      setFormData({ name: "", email: "", message: "" })
+      setFormSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setFormError("Something went wrong. Please try again later.")
-      console.error("Form submission error:", error)
+      setFormError("Something went wrong. Please try again later.");
+      console.error("Form submission error:", error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <main className="min-h-screen">
@@ -75,9 +77,12 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto">
           {formSubmitted ? (
             <div className="bg-green-50 p-8 rounded-lg text-center">
-              <h2 className="text-2xl font-bold text-green-800 mb-4">Thank You!</h2>
+              <h2 className="text-2xl font-bold text-green-800 mb-4">
+                Thank You!
+              </h2>
               <p className="text-green-700 mb-6">
-                Your message has been sent successfully. I'll get back to you as soon as possible.
+                Your message has been sent successfully. I'll get back to you as
+                soon as possible.
               </p>
               <button
                 onClick={() => setFormSubmitted(false)}
@@ -89,15 +94,23 @@ export default function ContactPage() {
           ) : (
             <>
               <p className="text-gray-600 mb-8">
-                Have a project in mind or want to chat about design? I'd love to hear from you. Fill out the form below
-                and I'll get back to you as soon as possible.
+                Have a project in mind or want to chat about design? I'd love to
+                hear from you. Fill out the form below and I'll get back to you
+                as soon as possible.
               </p>
 
-              {formError && <div className="bg-red-50 p-4 rounded-lg text-red-700 mb-6">{formError}</div>}
+              {formError && (
+                <div className="bg-red-50 p-4 rounded-lg text-red-700 mb-6">
+                  {formError}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Name
                   </label>
                   <input
@@ -112,7 +125,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email
                   </label>
                   <input
@@ -127,7 +143,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message
                   </label>
                   <textarea
@@ -167,17 +186,17 @@ export default function ContactPage() {
             <h3 className="text-gray-500 mb-4">Work</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work/kona-crumble" className="hover:underline">
+                <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
                 </Link>
               </li>
               <li>
-                <Link href="/work/promising-nfts" className="hover:underline">
+                <Link href="/promising-nfts" className="hover:underline">
                   Promising NFTs
                 </Link>
               </li>
               <li>
-                <Link href="/work/airbnb" className="hover:underline">
+                <Link href="/airbnb" className="hover:underline">
                   Airbnb
                 </Link>
               </li>
@@ -187,7 +206,7 @@ export default function ContactPage() {
             <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work" className="hover:underline">
+                <Link href="" className="hover:underline">
                   Work
                 </Link>
               </li>
@@ -212,7 +231,10 @@ export default function ContactPage() {
             <h3 className="text-gray-500 mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="mailto:hello@danielabontecou.com" className="hover:underline">
+                <Link
+                  href="mailto:hello@danielabontecou.com"
+                  className="hover:underline"
+                >
                   Email
                 </Link>
               </li>
@@ -222,7 +244,11 @@ export default function ContactPage() {
                 </Link>
               </li>
               <li>
-                <Link href="https://instagram.com" target="_blank" className="hover:underline">
+                <Link
+                  href="https://instagram.com"
+                  target="_blank"
+                  className="hover:underline"
+                >
                   Instagram
                 </Link>
               </li>
@@ -230,10 +256,12 @@ export default function ContactPage() {
           </div>
           <div>
             <h3 className="text-gray-500 mb-4">Do you want to collaborate?</h3>
-            <p className="text-gray-600">Send me an email and let's chat about what we can create together!</p>
+            <p className="text-gray-600">
+              Send me an email and let's chat about what we can create together!
+            </p>
           </div>
         </div>
       </footer>
     </main>
-  )
+  );
 }

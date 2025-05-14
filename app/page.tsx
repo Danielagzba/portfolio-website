@@ -33,43 +33,43 @@ export default function Home() {
             title="Kona Crumble"
             category="PRODUCT DESIGN"
             image="thumbnail copy.png"
-            href="/work/kona-crumble"
+            href="/kona-crumble"
           />
           <ProjectCard
             title="Promising NFT's"
             category="PRODUCT DESIGN"
             image="/promising.png?height=400&width=600"
-            href="/work/promising-nfts"
+            href="/promising-nfts"
           />
           <ProjectCard
             title="Airbnb UI case study"
             category="CASE STUDY"
             image="/bnb.jpg"
-            href="/work/airbnb"
+            href="/airbnb"
           />
           <ProjectCard
             title="Skyscanner"
             category="CASE STUDY"
             image="/sky.webp"
-            href="/work/skyscanner"
+            href="/skyscanner"
           />
           <ProjectCard
             title="Coco Canela"
             category="GRAPHIC DESIGN"
             image="/coco.jpg"
-            href="/work/coco-canela"
+            href="/coco-canela"
           />
           <ProjectCard
             title="Hello Idioma"
             category="PRODUCT DESIGN"
             image="/hello.png"
-            href="/work/hello-idioma"
+            href="/hello-idioma"
           />
           <ProjectCard
             title="Servigrafic Solutions"
             category="GRAPHIC DESIGN"
             image="/servigrafic.png"
-            href="/work/hello-idioma"
+            href="/hello-idioma"
           />
         </div>
       </section>
@@ -110,17 +110,17 @@ export default function Home() {
             <h3 className="text-gray-500 mb-4">Work</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work/kona-crumble" className="hover:underline">
+                <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
                 </Link>
               </li>
               <li>
-                <Link href="/work/promising-nfts" className="hover:underline">
+                <Link href="/promising-nfts" className="hover:underline">
                   Promising NFTs
                 </Link>
               </li>
               <li>
-                <Link href="/work/airbnb" className="hover:underline">
+                <Link href="/airbnb" className="hover:underline">
                   Airbnb
                 </Link>
               </li>
@@ -130,7 +130,7 @@ export default function Home() {
             <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/work" className="hover:underline">
+                <Link href="" className="hover:underline">
                   Work
                 </Link>
               </li>

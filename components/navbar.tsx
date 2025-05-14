@@ -37,7 +37,7 @@ export default function Navbar() {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/work" className="hover:text-gray-600">
+            <Link href="" className="hover:text-gray-600">
               Work
             </Link>
             <Link href="/about" className="hover:text-gray-600">
@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="md:hidden py-4 border-t border-gray-100">
             <nav className="flex flex-col gap-4">
               <Link
-                href="/work"
+                href=""
                 className="hover:text-gray-600 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
