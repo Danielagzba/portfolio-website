@@ -21,16 +21,59 @@ const projects = {
       duration: "4 months",
     },
     image: "/thumbnail copy.png",
+    gallery: {
+      image1: "konacrumble1.jpg",
+      image2: "konacrumble2.png",
+    },
     product: "Kona Crumble",
+    sections: [
+      {
+        title: "overview",
+        content: [
+          "Kona Crumble was a New York-style cookie company based on the island of Hawai’i, founded and managed by Daniela Bontecou.",
+          "I have always loved baking, and after much consideration, I decided to start a cookie business specializing in New York-style cookies—really BIG cookies!",
+        ],
+        images: [],
+      },
+      {
+        title: "branding",
+        content: [
+          'Behind the Logo: The Kona Crumble logo features a chocolate chip cookie adorned with brown chips and crumbs. The name "Kona Crumble" is displayed above in our chosen font, Homie Lullaby. This playful, handwritten-style font adds a fun and personal touch to the brand\'s identity.',
 
-    overview: [
-      "Kona Crumble was a New York-style cookie company based on the island of Hawai’i, founded and managed by Daniela Bontecou.",
-      "I have always loved baking, and after much consideration, I decided to start a cookie business specializing in New York-style cookies—really BIG cookies!",
-    ],
-    branding: [
-      'Behind the Logo: The Kona Crumble logo features a chocolate chip cookie adorned with brown chips and crumbs. The name "Kona Crumble" is displayed above in our chosen font, Homie Lullaby. This playful, handwritten-style font adds a fun and personal touch to the brand\'s identity.',
+          "The color palette below showcases the primary colors of the brand, which also became the colors used for the packaging.",
+        ],
+        images: ["konacrumble1.jpg", "konacrumble2.png"],
+      },
+      {
+        title: "From design to paper",
+        content: [
+          "For the packaging, I designed three individual boxes, each featuring one of our signature colors. Each box represents a different flavor from our three main signature offerings: chocolate chip with walnuts, white chocolate chip with macadamias, and double chocolate with Nutella.",
+          "Our larger box was kept simple with a white base, complemented by a colorful sleeve to add a vibrant and fun touch to the overall packaging.",
+        ],
+        images: [
+          "pack1.png",
+          "pack2.png",
+          "pack3.png",
+          "pack4.png",
+          "Packaging.png",
+        ],
+      },
+      {
+        title: "",
+        content: [],
+        images: ["Packaging1.png"],
+      },
+      {
+        title: ["Social Media"],
+        content: [
+          "For social media, my goal was to showcase the cookies with high-quality photos that made viewers feel like they could almost taste them.",
 
-      "The color palette below showcases the primary colors of the brand, which also became the colors used for the packaging.",
+          "All the photos were taken by me in our makeshift home studio, which consisted of colored paper for the backgrounds and surfaces.",
+
+          "To organize the posts, I used Adobe Illustrator to lay out the photos and visualize how I wanted the profile to look. For captions and hashtags, I utilized ChatGPT to craft engaging content.",
+        ],
+        images: ["social1.png", "social2.png"],
+      },
     ],
   },
   "promising-nfts": {
@@ -168,7 +211,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             {project.title.split(" ").slice(1).join(" ")}
           </h1>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           <div>
             <h2 className="text-gray-400 text-sm mb-2">WORKFLOW</h2>
@@ -196,7 +238,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <p>{project.product}</p>
           </div>
         </div>
-
         <hr className="border-gray-200 mb-16" />
         <div className="mb-16">
           <Image
@@ -207,49 +248,54 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             className="w-full h-[400px] object-cover rounded-lg"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          </div>
 
-          <div className="md:col-span-2">
-            {project.overview.map((paragraph, index) => (
-              <p key={index} className="text-gray-600 mb-4">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-
-          {project.branding && project.branding.length > 0 && (
-            <>
-              <h2 className="text-2xl font-bold mb-4">Branding</h2>
-
-              <div className="md:col-span-2">
-                {project.branding.map((paragraph, index) => (
-                  <p key={index} className="text-gray-600 mb-4">
-                    {paragraph}
-                  </p>
-                ))}
+        <div className="flex flex-col gap-24 mb-24 px-6 max-w-7xl mx-auto">
+          {project.sections.map((section, index) => (
+            <div key={index} className="w-full">
+              <div className="flex flex-col md:flex-row md:gap-12 lg:gap-24 mb-16">
+                <div className="md:w-1/4 mb-8 md:mb-0">
+                  <h2 className="text-xl font-medium capitalize text-gray-900">
+                    {section.title}
+                  </h2>
+                </div>
+                <div className="md:w-3/4">
+                  {section.content.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-gray-600 text-md mb-6 leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </>
-          )}
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <Image
-            src="/placeholder.svg?height=600&width=800"
-            alt={`${project.title} detail 1`}
-            width={800}
-            height={600}
-            className="w-full h-auto rounded-lg"
-          />
-          <Image
-            src="/placeholder.svg?height=600&width=800"
-            alt={`${project.title} detail 2`}
-            width={800}
-            height={600}
-            className="w-full h-auto rounded-lg"
-          />
+              <div className="flex justify-center w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl">
+                  {section.images.map((image, i) => {
+                    const isLast = i === section.images.length - 1;
+                    const isOdd = section.images.length % 2 !== 0;
+                    const spanFull = isLast && isOdd;
+
+                    return (
+                      <div
+                        key={i}
+                        className={`w-full ${spanFull ? "md:col-span-2" : ""}`}
+                      >
+                        <div className="aspect-w-1 aspect-h-1 relative">
+                          <img
+                            src={image}
+                            alt={`${section.title} detail ${i + 1}`}
+                            className="w-full mx-auto rounded-none"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
