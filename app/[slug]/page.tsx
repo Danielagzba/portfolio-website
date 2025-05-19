@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar";
+import ProjectCard from "@/components/project-card";
 
 // This would typically come from a CMS or database
 const projects = {
@@ -72,7 +73,36 @@ const projects = {
 
           "To organize the posts, I used Adobe Illustrator to lay out the photos and visualize how I wanted the profile to look. For captions and hashtags, I utilized ChatGPT to craft engaging content.",
         ],
-        images: ["social1.png", "social2.png"],
+        images: ["social1.png", "social2.png", "social3.png", "social4.png"],
+      },
+      {
+        title: ["Marketing"],
+        content: [
+          "Primary Communications Channel: Our main platform for communication was Instagram, where we focused on sharing product photos, stories, and reels to engage with our audience.",
+          "Interactive Stories: Our Instagram stories were designed to be both interactive and informative, offering insights into our brand, pricing, upcoming pop-ups, cookie trivia, this or that polls, and holiday celebrations.",
+          "These strategies boosted engagement, helped grow our audience, and familiarized people with our brand.",
+          "Instagram and TikTok: Both our Instagram and TikTok accounts featured videos showcasing our cookie flavors, packaging materials, upcoming pop-ups, and mouthwatering shots of our cookies.",
+          "Our most-viewed video on TikTok reached 771 views, while our top-performing video on Instagram garnered 81 views.",
+        ],
+        images: ["marketing1.png", "marketing2.png"],
+      },
+      {
+        title: ["Punching Cards"],
+        content: [
+          "Loyalty Program: Another strategy I implemented was a punch card system. Customers received a punch card to track their cookie purchases—after buying 10 cookies, they would get the 11th one for free. This program encouraged customers to make repeat purchases while rewarding their loyalty.",
+        ],
+        images: ["punchcard1.png", "punchcard2.png"],
+      },
+      {
+        title: ["Learning"],
+        content: [
+          "Kona Crumble was the second business I fully branded and founded. Although it was a successful business and people loved the product, we faced several challenges:",
+          "1. Production: Since we were baking the cookies at home, our production was limited to how many we could make at once.",
+          "2. Unpredictability: Our primary sales location was farmer's markets, which can be unpredictable due to factors like attendance and weather conditions.",
+          "3. Day-Old Sale: After a market, we sometimes had a lot of leftover product. We would announce a day-old sale on Instagram, offering cookies at a 50% discount. Even with the price reduction, we often still had a significant amount of leftover product, which proved challenging to manage.",
+          "Overall, Kona Crumble was an invaluable learning experience. Not only did it enhance my graphic design skills, but it also taught me packaging design, social media strategies, sales techniques, and money management.",
+        ],
+        images: [],
       },
     ],
   },
@@ -193,7 +223,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen">
       <Navbar />
 
-      <div className="container mx-auto px-6 md:px-12 py-16">
+      <div className="container mx-auto px-6 md:px-12 pt-16">
         <div className="mb-8">
           <span
             className={
@@ -298,6 +328,62 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           ))}
         </div>
       </div>
+      <section className="container mx-auto px-6 md:px-12 pb-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            Explor my other projects
+          </h2>
+          <p className="text-gray-500 mt-2 max-w-xl">
+            I've assembled a collection of my recent Product Design ventures to
+            illustrate my approach
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+          <ProjectCard
+            title="Kona Crumble"
+            category="PRODUCT DESIGN"
+            image="thumbnail copy.png"
+            href="/kona-crumble"
+          />
+          <ProjectCard
+            title="Promising NFT's"
+            category="PRODUCT DESIGN"
+            image="/promising.png?height=400&width=600"
+            href="/promising-nfts"
+          />
+          <ProjectCard
+            title="Airbnb UI case study"
+            category="CASE STUDY"
+            image="/bnb.jpg"
+            href="/airbnb"
+          />
+          <ProjectCard
+            title="Skyscanner"
+            category="CASE STUDY"
+            image="/sky.webp"
+            href="/skyscanner"
+          />
+          <ProjectCard
+            title="Coco Canela"
+            category="GRAPHIC DESIGN"
+            image="/coco.jpg"
+            href="/coco-canela"
+          />
+          <ProjectCard
+            title="Hello Idioma"
+            category="PRODUCT DESIGN"
+            image="/hello.png"
+            href="/hello-idioma"
+          />
+          <ProjectCard
+            title="Servigrafic Solutions"
+            category="GRAPHIC DESIGN"
+            image="/servigrafic.png"
+            href="/hello-idioma"
+          />
+        </div>
+      </section>
 
       <footer className="container mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
