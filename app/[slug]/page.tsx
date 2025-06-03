@@ -805,12 +805,19 @@ const projects = {
       duration: "6 months",
     },
     product: "Hello Idioma",
-    overview: [
-      "Hello Idioma is a language learning app focused on conversational practice.",
-      "The app needed an interface that would facilitate natural language learning and reduce the anxiety often associated with speaking a new language.",
-      "I designed an intuitive interface with interactive dialogues, speech recognition, and personalized feedback to create an engaging learning experience.",
+    section: [
+      {
+        title: ["Learning"],
+        content: [
+          "Before joining Coco Canela I had no idea the work that went into having a marketing agency and working not only with your own brand but with clients can be intimidating, but once you get into the flow of things, the designs start to flow.",
+
+          "It is very important to stay organized and have a system in place where you can visualize what are the things that you're going to post on social media each month that also align with your brand.",
+
+          "Social media design was so fulfilling and that motivated me to continue doing it.",
+        ],
+        images: [],
+      },
     ],
-    image: "/placeholder.svg?height=600&width=1200",
   },
 };
 
