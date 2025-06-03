@@ -804,8 +804,9 @@ const projects = {
       year: "2022",
       duration: "6 months",
     },
+    image: "https://i.imgur.com/ducp8gQ.png",
     product: "Hello Idioma",
-    section: [
+    sections: [
       {
         title: ["Learning"],
         content: [
