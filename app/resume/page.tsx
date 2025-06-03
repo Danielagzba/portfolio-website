@@ -13,7 +13,7 @@ export default function ResumePage() {
         <div className="max-w-4xl mx-auto bg-white shadow-sm border border-gray-100 rounded-lg overflow-hidden">
           {/* Replace this with your actual resume image */}
           <Image
-            src="/Daniela-Resume-EN.png"
+            src="/Resume_Daniela_Bontecou.jpg"
             alt="Daniela Bontecou Resume"
             width={900}
             height={1200}
