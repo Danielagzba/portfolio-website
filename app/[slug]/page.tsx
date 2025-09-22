@@ -41,7 +41,7 @@ const projects = {
 
           "The color palette below showcases the primary colors of the brand, which also became the colors used for the packaging.",
         ],
-        images: ["konacrumble1.jpg", "konacrumble2.png"],
+        images: [],
       },
       {
         title: "From design to paper",
@@ -75,7 +75,7 @@ const projects = {
           "https://i.imgur.com/4nhJluM.png",
           "https://i.imgur.com/rBNvR5s.png",
           "https://i.imgur.com/Xt7ciZC.png",
-          "https://i.imgur.com/dgE8faY.pngg",
+          "https://i.imgur.com/dgE8faY.png",
         ],
       },
       {
@@ -797,9 +797,9 @@ const projects = {
   "hello-idioma": {
     title: "Hello Idioma",
     category: "PRODUCT DESIGN",
-    titleColor: "#000000",
-    workflow: ["UI Design", "UX Research", "Prototyping", "User Testing"],
-    team: ["Daniela Bontecou", "Andrea Gonzalez", "Alberto Alfaro"],
+    titleColor: "#6E56CF",
+    workflow: ["Branding", "Graphic Design", "Marketing", "Management"],
+    team: ["Daniela Bontecou"],
     time: {
       year: "2022",
       duration: "6 months",
@@ -957,7 +957,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <ProjectCard
             title="Kona Crumble"
             category="PRODUCT DESIGN"
-            image="thumbnail copy.png"
+            image="/thumbnail copy.png"
             href="/kona-crumble"
           />
           <ProjectCard

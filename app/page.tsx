@@ -74,35 +74,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6 md:px-12 py-16">
-        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-          <div className="w-full md:w-1/3">
-            <Image
-              src="/dany.png"
-              alt="Daniela Bontecou"
-              width={400}
-              height={400}
-              className="rounded-full"
-            />
-          </div>
-          <div className="w-full md:w-2/3">
-            <h2 className="text-4xl font-bold mb-4">Hey!</h2>
-            <div className="w-16 h-1 bg-gray-300 mb-6"></div>
-            <p className="text-gray-600 mb-6 text-lg">
-              My name is Daniela and I am a Designer and Photographer somewhere
-              between Hawaii, California and Mexico.
-            </p>
-            <p className="text-gray-600 mb-6 text-lg">
-              My main focuses are in Graphic Design, UI Design, Product
-              Photography and Fashion Photography.
-            </p>
-            <p className="text-gray-600 text-lg">
-              Away from the desk, I enjoy surfing, learning new languages and
-              traveling the world with my husband.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <footer className="container mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

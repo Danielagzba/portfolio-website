@@ -28,13 +28,13 @@ export default function ProjectCard({
 
   return (
     <Link href={href} className="group">
-      <div className="overflow-hidden rounded-lg mb-4 transition-all duration-300 group-hover:shadow-md">
+      <div className="overflow-hidden rounded-xl mb-4 transition-all duration-300 group-hover:shadow-md">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
           width={400}
           height={400}
-          className="w-[600px] h-[400px] object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
+          className="w-[600px] h-[400px] object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div>
