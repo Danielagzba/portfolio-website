@@ -71,6 +71,12 @@ export default function Home() {
             image="/servigrafic.png"
             href="/hello-idioma"
           />
+          <ProjectCard
+            title="Talasofilia Pilates"
+            category="PRODUCT DESIGN"
+            image="https://i.imgur.com/bxDCfyA.png"
+            href="/talasofilia-pilates"
+          />
         </div>
       </section>
 

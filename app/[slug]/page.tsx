@@ -41,7 +41,7 @@ const projects = {
 
           "The color palette below showcases the primary colors of the brand, which also became the colors used for the packaging.",
         ],
-        images: [],
+        images: ["konacrumble1.jpg", "konacrumble2.png"],
       },
       {
         title: "From design to paper",
@@ -75,7 +75,7 @@ const projects = {
           "https://i.imgur.com/4nhJluM.png",
           "https://i.imgur.com/rBNvR5s.png",
           "https://i.imgur.com/Xt7ciZC.png",
-          "https://i.imgur.com/dgE8faY.png",
+          "https://i.imgur.com/dgE8faY.pngg",
         ],
       },
       {
@@ -797,9 +797,9 @@ const projects = {
   "hello-idioma": {
     title: "Hello Idioma",
     category: "PRODUCT DESIGN",
-    titleColor: "#6E56CF",
-    workflow: ["Branding", "Graphic Design", "Marketing", "Management"],
-    team: ["Daniela Bontecou"],
+    titleColor: "#000000",
+    workflow: ["UI Design", "UX Research", "Prototyping", "User Testing"],
+    team: ["Daniela Bontecou", "Andrea Gonzalez", "Alberto Alfaro"],
     time: {
       year: "2022",
       duration: "6 months",
@@ -817,6 +817,43 @@ const projects = {
           "Social media design was so fulfilling and that motivated me to continue doing it.",
         ],
         images: [],
+      },
+    ],
+  },
+  "talasofilia-pilates": {
+    title: "Talasofilia Pilates",
+    category: "PRODUCT DESIGN",
+    titleColor: "#6e56cf",
+    workflow: ["Product Photography", "Social Media Design", "Web Design", "Web Development"],
+    team: ["Daniela Bontecou"],
+    time: {
+      year: "2024",
+      duration: "",
+    },
+    image: "https://i.imgur.com/bxDCfyA.png",
+    product: "Talasofilia Pilates",
+    productUrl: "https://www.talasofiliapilates.com/",
+    sections: [
+      {
+        title: "overview",
+        content: [
+          "Talasofilia Pilates is a Pilates studio located in the heart of Puerto Escondido, focused on mindful movement and personal transformation.",
+          "This project involved creating a website for the studio where students can purchase packages, book or cancel classes, and learn more about the studio.",
+        ],
+        images: [],
+      },
+      {
+        title: "Website",
+        content: [
+          "The Talasofilia Pilates website embodies the studio's serene and mindful philosophy through a clean, minimalist design inspired by the calm of Puerto Escondido. Soft tones, generous whitespace, and natural imagery create a soothing atmosphere that mirrors the brand's focus on balance and transformation. The site allows students to easily purchase packages, book or cancel classes, and learn more about the studio.",
+        ],
+        images: [
+          "https://i.imgur.com/5TFvlkh.jpeg",
+          "https://i.imgur.com/asqSCEK.png",
+          "https://i.imgur.com/HDDxpiO.png",
+          "https://i.imgur.com/L0rPofL.png",
+          "https://i.imgur.com/RuJhVmU.png"
+        ],
       },
     ],
   },
@@ -879,7 +916,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
           <div>
             <h2 className="text-gray-400 text-sm mb-2">PRODUCT</h2>
-            <p>{project.product}</p>
+            {(project as any).productUrl ? (
+              <a
+                href={(project as any).productUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {project.product}
+              </a>
+            ) : (
+              <p>{project.product}</p>
+            )}
           </div>
         </div>
         <hr className="border-gray-200 mb-16" />
@@ -957,7 +1005,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <ProjectCard
             title="Kona Crumble"
             category="PRODUCT DESIGN"
-            image="/thumbnail copy.png"
+            image="thumbnail copy.png"
             href="/kona-crumble"
           />
           <ProjectCard
