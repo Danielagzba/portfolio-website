@@ -820,6 +820,30 @@ const projects = {
       },
     ],
   },
+  "servigrafic-solutions": {
+    title: "Servigrafic Solutions",
+    category: "GRAPHIC DESIGN",
+    titleColor: "#2950cf",
+    workflow: ["Logo Design", "Brand Identity", "Print Design", "Marketing Materials"],
+    team: ["Daniela Bontecou"],
+    time: {
+      year: "2023",
+      duration: "Current",
+    },
+    image: "https://i.imgur.com/C68oKiA.png",
+    product: "Servigrafic Solutions",
+    productUrl: "https://servigraficsolutions.com/",
+    sections: [
+      {
+        title: "Overview",
+        content: [
+          "Servigrafic Solutions is a printing and graphic design company that provides comprehensive design and printing services.",
+          "This project involved creating a complete brand identity and various marketing materials for the company.",
+        ],
+        images: [],
+      },
+    ],
+  },
   "talasofilia-pilates": {
     title: "Talasofilia Pilates",
     category: "PRODUCT DESIGN",
@@ -1003,6 +1027,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           <ProjectCard
+            title="Talasofilia Pilates"
+            category="PRODUCT DESIGN"
+            image="https://i.imgur.com/bxDCfyA.png"
+            href="/talasofilia-pilates"
+          />
+          <ProjectCard
             title="Kona Crumble"
             category="PRODUCT DESIGN"
             image="thumbnail copy.png"
@@ -1041,8 +1071,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <ProjectCard
             title="Servigrafic Solutions"
             category="GRAPHIC DESIGN"
-            image="/servigrafic.png"
-            href="/hello-idioma"
+            image="https://i.imgur.com/C68oKiA.png"
+            href="/servigrafic-solutions"
           />
         </div>
       </section>

@@ -30,6 +30,12 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           <ProjectCard
+            title="Talasofilia Pilates"
+            category="PRODUCT DESIGN"
+            image="https://i.imgur.com/bxDCfyA.png"
+            href="/talasofilia-pilates"
+          />
+          <ProjectCard
             title="Kona Crumble"
             category="PRODUCT DESIGN"
             image="thumbnail copy.png"
@@ -68,14 +74,8 @@ export default function Home() {
           <ProjectCard
             title="Servigrafic Solutions"
             category="GRAPHIC DESIGN"
-            image="/servigrafic.png"
-            href="/hello-idioma"
-          />
-          <ProjectCard
-            title="Talasofilia Pilates"
-            category="PRODUCT DESIGN"
-            image="https://i.imgur.com/bxDCfyA.png"
-            href="/talasofilia-pilates"
+            image="https://i.imgur.com/C68oKiA.png"
+            href="/servigrafic-solutions"
           />
         </div>
       </section>
