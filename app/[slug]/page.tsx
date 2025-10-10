@@ -898,79 +898,79 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen">
       <Navbar />
 
-      <div className="container mx-auto px-6 md:px-12 pt-16">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 pt-8 sm:pt-12 md:pt-16">
+        <div className="mb-6 sm:mb-8">
           <span
             className={
               project.category === "CASE STUDY"
-                ? "case-study-tag"
-                : "product-design-tag"
+                ? "case-study-tag inline-block"
+                : "product-design-tag inline-block"
             }
           >
             {project.category}
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold mt-2">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mt-2">
             <span style={{ color: project.titleColor }}>
               {project.title.split(" ")[0]}
             </span>{" "}
             {project.title.split(" ").slice(1).join(" ")}
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
           <div>
-            <h2 className="text-gray-400 text-sm mb-2">WORKFLOW</h2>
-            <ul className="space-y-1">
+            <h2 className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">WORKFLOW</h2>
+            <ul className="space-y-1 text-sm sm:text-base">
               {project.workflow.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-gray-400 text-sm mb-2">TEAM</h2>
-            <ul className="space-y-1">
+            <h2 className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">TEAM</h2>
+            <ul className="space-y-1 text-sm sm:text-base">
               {project.team.map((member, index) => (
                 <li key={index}>{member}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-gray-400 text-sm mb-2">TIME</h2>
-            <p>{project.time.year}</p>
-            <p>{project.time.duration}</p>
+            <h2 className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">TIME</h2>
+            <p className="text-sm sm:text-base">{project.time.year}</p>
+            <p className="text-sm sm:text-base">{project.time.duration}</p>
           </div>
           <div>
-            <h2 className="text-gray-400 text-sm mb-2">PRODUCT</h2>
+            <h2 className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2">PRODUCT</h2>
             {(project as any).productUrl ? (
               <a
                 href={(project as any).productUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="hover:underline text-sm sm:text-base break-words"
               >
                 {project.product}
               </a>
             ) : (
-              <p>{project.product}</p>
+              <p className="text-sm sm:text-base">{project.product}</p>
             )}
           </div>
         </div>
-        <hr className="border-gray-200 mb-16" />
-        <div className="mb-16">
+        <hr className="border-gray-200 mb-8 sm:mb-12 md:mb-16" />
+        <div className="mb-8 sm:mb-12 md:mb-16">
           <Image
             src={project.image || "/"}
             alt={project.title}
             width={1200}
             height={400}
-            className="w-full h-[400px] object-cover rounded-lg"
+            className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-lg"
           />
         </div>
 
-        <div className="flex flex-col gap-24 mb-24 px-6 max-w-7xl mx-auto">
+        <div className="flex flex-col gap-12 sm:gap-16 md:gap-24 mb-12 sm:mb-16 md:mb-24 px-2 sm:px-4 md:px-6 max-w-7xl mx-auto">
           {project.sections.map((section, index) => (
             <div key={index} className="w-full">
-              <div className="flex flex-col md:flex-row md:gap-12 lg:gap-24 mb-16">
-                <div className="md:w-1/4 mb-8 md:mb-0">
-                  <h2 className="text-xl font-medium capitalize text-gray-900">
+              <div className="flex flex-col md:flex-row md:gap-8 lg:gap-12 xl:gap-24 mb-8 sm:mb-12 md:mb-16">
+                <div className="md:w-1/4 mb-4 sm:mb-6 md:mb-0">
+                  <h2 className="text-lg sm:text-xl font-medium capitalize text-gray-900">
                     {section.title}
                   </h2>
                 </div>
@@ -978,7 +978,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   {section.content.map((paragraph, i) => (
                     <p
                       key={i}
-                      className="text-gray-600 text-md mb-6 leading-relaxed"
+                      className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed"
                     >
                       {paragraph}
                     </p>
@@ -987,7 +987,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
 
               <div className="flex justify-center w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-4xl w-full">
                   {section.images.map((image, i) => {
                     const isLast = i === section.images.length - 1;
                     const isOdd = section.images.length % 2 !== 0;
@@ -1014,18 +1014,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           ))}
         </div>
       </div>
-      <section className="container mx-auto px-6 md:px-12 pb-12">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
-            Explor my other projects
+      <section className="container mx-auto px-4 sm:px-6 md:px-12 pb-8 sm:pb-12">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
+            Explore my other projects
           </h2>
-          <p className="text-gray-500 mt-2 max-w-xl">
+          <p className="text-gray-500 mt-2 max-w-full sm:max-w-xl text-sm sm:text-base">
             I've assembled a collection of my recent Product Design ventures to
             illustrate my approach
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <ProjectCard
             title="Talasofilia Pilates"
             category="PRODUCT DESIGN"
@@ -1077,11 +1077,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <footer className="container mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="container mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16 border-t border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div>
-            <h3 className="text-gray-500 mb-4">Work</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Work</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
@@ -1100,8 +1100,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </ul>
           </div>
           <div>
-            <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Daniela Bontecou</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link href="" className="hover:underline">
                   Work
@@ -1114,13 +1114,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-gray-500 mb-4">Contact</h3>
-            <ul className="space-y-2">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Contact</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link
                   href="mailto:hello@danielabontecou.com"
-                  className="hover:underline"
+                  className="hover:underline break-words"
                 >
                   Email
                 </Link>
@@ -1145,9 +1145,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-gray-500 mb-4">Do you want to collaborate?</h3>
-            <p className="text-gray-600">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Do you want to collaborate?</h3>
+            <p className="text-gray-600 text-sm sm:text-base">
               Send me an email and let's chat about what we can create together!
             </p>
           </div>

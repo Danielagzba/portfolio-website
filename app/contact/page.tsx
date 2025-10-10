@@ -71,8 +71,8 @@ export default function ContactPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      <section className="container mx-auto px-6 md:px-12 py-16">
-        <h1 className="text-3xl md:text-5xl font-bold mb-8">Contact</h1>
+      <section className="container mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 sm:mb-8">Contact</h1>
 
         <div className="max-w-2xl mx-auto">
           {formSubmitted ? (
@@ -93,7 +93,7 @@ export default function ContactPage() {
             </div>
           ) : (
             <>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
                 Have a project in mind or want to chat about design? I'd love to
                 hear from you. Fill out the form below and I'll get back to you
                 as soon as possible.
@@ -180,11 +180,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <footer className="container mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="container mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-12 md:py-16 border-t border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div>
-            <h3 className="text-gray-500 mb-4">Work</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Work</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link href="/kona-crumble" className="hover:underline">
                   Kona Crumble
@@ -203,8 +203,8 @@ export default function ContactPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-gray-500 mb-4">Daniela Bontecou</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Daniela Bontecou</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link href="" className="hover:underline">
                   Work
@@ -227,13 +227,13 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-gray-500 mb-4">Contact</h3>
-            <ul className="space-y-2">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Contact</h3>
+            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
               <li>
                 <Link
                   href="mailto:hello@danielabontecou.com"
-                  className="hover:underline"
+                  className="hover:underline break-words"
                 >
                   Email
                 </Link>
@@ -254,9 +254,9 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-gray-500 mb-4">Do you want to collaborate?</h3>
-            <p className="text-gray-600">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">Do you want to collaborate?</h3>
+            <p className="text-gray-600 text-sm sm:text-base">
               Send me an email and let's chat about what we can create together!
             </p>
           </div>
